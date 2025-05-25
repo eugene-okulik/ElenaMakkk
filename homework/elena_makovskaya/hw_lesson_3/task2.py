@@ -3,4 +3,4 @@
 x = 999
 y = 111
 
-print(x - y / 1 + x*y)
+print(x - y / 1 + x * y)
