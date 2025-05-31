@@ -35,7 +35,7 @@ print(my_dict['my_tuple'][-1])
 my_dict['my_list'].append('violet')
 my_dict['my_list'].pop(1)
 
-my_dict['my_dict']['i am a tuple'] = 'sixth'
+my_dict['my_dict'][('i am a tuple',)] = 'sixth'
 del my_dict['my_dict']['k1']
 
 my_dict['my_set'].add(44)
