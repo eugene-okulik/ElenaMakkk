@@ -27,7 +27,7 @@ my_dict = {
     'my_tuple': ('monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
     'my_list': ['red', 'orange', 'yellow', 'green', 'blue'],
     'my_dict': {'k1': 'first', 'k2': 'second', 'k3': 'third', 'k4': 'fourth', 'k5': 'fifth'},
-    'my_set': {0, 5, 25, 255, 555, True, False, 'text'}
+    'my_set': {0, 5, 25, 255, 55, True, False, 'text'}
 }
 
 print(my_dict['my_tuple'][-1])
