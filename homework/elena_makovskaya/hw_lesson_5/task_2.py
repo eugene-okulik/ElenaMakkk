@@ -17,15 +17,16 @@
 # скопировать его для обработки каждой строки. Чуть позже будем разбираться как избегать копирования одинакового кода.
 
 text1 = 'результат операции: 42'
-list_from_text1 = text1.split()
-print(list_from_text1[2])
+a = int(text1[20: ])
+a = a + 10
+print(a)
 
 text2 = 'результат операции: 514'
-
-list_from_text2 = text2.split()
-print(list_from_text2[2])
+b = int(text2[20: ])
+b = b + 10
+print(b)
 
 text3 = 'результат работы программы: 9'
-
-list_from_text3 = text3.split()
-print(list_from_text3[3])
+c = int(text3[28: ])
+c = c + 10
+print(c)
