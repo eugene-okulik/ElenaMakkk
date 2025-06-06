@@ -17,16 +17,19 @@
 # скопировать его для обработки каждой строки. Чуть позже будем разбираться как избегать копирования одинакового кода.
 
 text1 = 'результат операции: 42'
-a = int(text1[20:])
+position = text1.index(':')
+a = int(text1[position + 1:])
 a = a + 10
 print(a)
 
 text2 = 'результат операции: 514'
-b = int(text2[20:])
+position = text2.index(':')
+b = int(text2[position + 1:])
 b = b + 10
 print(b)
 
 text3 = 'результат работы программы: 9'
-c = int(text3[28:])
+position = text3.index(':')
+c = int(text3[position + 1:])
 c = c + 10
 print(c)
