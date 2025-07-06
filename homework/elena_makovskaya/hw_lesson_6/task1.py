@@ -6,15 +6,17 @@
 # но уже преобразованного.
 
 
-text = ("Etiam tincidunt neque erat, quis molestie enim imperdiet vel. Integer urna nisl, facilisis vitae semper at, "
+text = ("Etiam tincidunt neque erat, quis molestie enim imperdiet vel. Integer urna nisl, facilisis vitae semper at, " +
         "dignissim vitae libero")
 
 words = text.split()
 result_words = []
 
 for word in words:
-    if word.endswith(('.', ',')):
+    if word.endswith('.'):
         new_words = word[:-1] + 'ing' + '.'
+    elif word.endswith(','):
+        new_words = word[:-1] + 'ing' + ','
     else:
         new_words = word + 'ing'
 
