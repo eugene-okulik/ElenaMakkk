@@ -16,10 +16,12 @@ text1 = 'результат операции: 42'
 text2 = 'результат операции: 514'
 text3 = 'результат работы программы: 9'
 
-def get_and_calculate (text):
+
+def get_and_calculate(text):
     get_num = int(text.split(':')[-1])
     result = get_num + 10
     return result
+
 
 print(get_and_calculate(text1))
 print(get_and_calculate(text2))

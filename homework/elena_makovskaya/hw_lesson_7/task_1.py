@@ -13,7 +13,7 @@ secret_number = 12
 
 while True:
     user_input = int(input('Угадай число: '))
-    if  int(user_input) == secret_number:
+    if int(user_input) == secret_number:
         print('Поздравляю! Вы угадали!')
         break
     else:
