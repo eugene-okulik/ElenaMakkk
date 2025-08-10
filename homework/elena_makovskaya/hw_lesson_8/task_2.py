@@ -7,7 +7,7 @@ import sys
 sys.set_int_max_str_digits(0)
 
 
-def fibonacci_numbers(limit = 100000):
+def fibonacci_numbers(limit=100000):
     num_1 = 0
     num_2 = 1
     counter = 1
@@ -15,6 +15,7 @@ def fibonacci_numbers(limit = 100000):
         yield num_1
         num_1, num_2 = num_2, num_1 + num_2
         counter += 1
+
 
 count = 1
 for nums in fibonacci_numbers(100001):
@@ -26,4 +27,4 @@ for nums in fibonacci_numbers(100001):
         print(nums)
     elif count == 100000:
         print(nums)
-    count += 1
+    count+=1

@@ -8,6 +8,7 @@
 
 import random
 
+
 def get_salary_with_bonus():
     salary = int(input('Введите вашу зарплату: '))
     bonus = bool(random.getrandbits(1))
