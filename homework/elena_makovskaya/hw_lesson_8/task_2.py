@@ -27,4 +27,4 @@ for nums in fibonacci_numbers(100001):
         print(nums)
     elif count == 100000:
         print(nums)
-    count+=1
+    count += 1
