@@ -27,6 +27,6 @@ PRICE_LIST = '''тетрадь 50р
 рюкзак 500р'''
 
 
-new_dict = dict(map(lambda x: (x.split()[0], int(x.split()[1][:-1])),PRICE_LIST.splitlines()))
+new_dict = dict(map(lambda x: (x.split()[0], int(x.split()[1][:-1])), PRICE_LIST.splitlines()))
 
 print(new_dict)

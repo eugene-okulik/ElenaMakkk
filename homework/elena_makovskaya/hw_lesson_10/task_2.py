@@ -38,7 +38,6 @@ def repeat_me(func):
 def example(count):
     print('example')
 
-
 example(4)
 
 

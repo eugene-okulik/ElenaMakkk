@@ -33,17 +33,17 @@ def control_operation(func):
 
 @control_operation
 def calc(first, second, operation):
-     if operation == '+':
+    if operation == '+':
          return first + second
-     elif operation == '-':
+    elif operation == '-':
          return first - second
-     elif operation == '*':
+    elif operation == '*':
          return first * second
-     elif operation == '/':
-         if second == 0:
-             return "Ошибка: на ноль делить нельзя!"
-         return first / second
-     else:
-         return None
+    elif operation == '/':
+        if second == 0:
+            return "Ошибка: на ноль делить нельзя!"
+        return first / second
+    else:
+        return None
 
 print(calc(50, 9))
