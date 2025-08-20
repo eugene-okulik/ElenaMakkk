@@ -40,7 +40,3 @@ def example(count):
 
 
 example(4)
-
-
-
-
