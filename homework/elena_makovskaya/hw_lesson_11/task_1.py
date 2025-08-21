@@ -24,7 +24,6 @@ class Book:
     text_exist = True
     is_reserved = False
 
-
     def __init__(self, name_book, author, pages_count, isbn):
         self.name_book = name_book
         self.author = author
