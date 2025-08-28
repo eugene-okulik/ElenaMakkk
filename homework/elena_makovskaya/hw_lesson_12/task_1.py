@@ -19,7 +19,6 @@ class Flowers:
         self.stem_length = stem_length
         self.cost = cost
 
-
     def __repr__(self):
         return f'{self.name}'
 
@@ -52,16 +51,13 @@ class Bouquet:
     def add_flower(self, flower):
         self.bouquet.append(flower)
 
-
     def total_sum_of_cost(self):
         total_sum = sum(flower.cost for flower in self.bouquet)
         return total_sum
 
-
     def average_life_time(self):
         average_life_time = sum(flower.freshness_in_days for flower in self.bouquet) / len(self.bouquet)
         return average_life_time
-
 
     def sort_by_parameter(self, parameter):
         if parameter == 'cost':
@@ -86,10 +82,9 @@ class Bouquet:
     def search_flower_by_life_time(self, min_day, max_day):
         result_flowers = []
         for flower in self.bouquet:
-            if min_day <= flower.freshness_in_days <= max_day:
+            if min_day<=flower.freshness_in_days<=max_day:
                 result_flowers.append(flower)
         print(result_flowers)
-
 
 rose = Roses('Роза', 8, 'red', 15, 300)
 tulip = Tulips('Тюльпан',5, 'yellow', 10, 400)
