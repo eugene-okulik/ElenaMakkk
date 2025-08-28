@@ -47,7 +47,6 @@ class Bouquet:
     def __init__(self):
         self.bouquet = []
 
-
     def add_flower(self, flower):
         self.bouquet.append(flower)
 
@@ -61,7 +60,7 @@ class Bouquet:
 
     def sort_by_parameter(self, parameter):
         if parameter == 'cost':
-            self.bouquet.sort(key = lambda x: x.cost)
+            self.bouquet.sort(key=lambda x: x.cost)
             print(bouquet.bouquet)
         elif parameter == 'name':
             self.bouquet.sort(key=lambda x: x.name)
@@ -79,15 +78,16 @@ class Bouquet:
             print('Вы ввели неверный параметр')
 
 
-    def search_flower_by_life_time(self, min_day, max_day):
-        result_flowers = []
-        for flower in self.bouquet:
-            if min_day<=flower.freshness_in_days<=max_day:
-                result_flowers.append(flower)
-        print(result_flowers)
+def search_flower_by_life_time(self, min_day, max_day):
+    result_flowers = []
+    for flower in self.bouquet:
+        if min_day <= flower.freshness_in_days <= max_day:
+            result_flowers.append(flower)
+    print(result_flowers)
+
 
 rose = Roses('Роза', 8, 'red', 15, 300)
-tulip = Tulips('Тюльпан',5, 'yellow', 10, 400)
+tulip = Tulips('Тюльпан', 5, 'yellow', 10, 400)
 orchid = Orchids('Орхидея', 4, 'pink', 12, 100)
 pion = Peonies('Пион', 6, 'blue', 13, 200)
 
