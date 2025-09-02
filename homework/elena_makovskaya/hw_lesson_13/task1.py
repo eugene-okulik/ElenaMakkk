@@ -38,7 +38,7 @@ def update_dates():
             date = get_data_from_line(line)
             if date:
                 new_date = date + timedelta(days=7)
-                print(f'Дата на неделю позже: {new_date}\n')
+                print(f'1. Дата на неделю позже: {new_date}\n')
         elif new_line.startswith('2'):
             date = get_data_from_line(line)
             if date:
