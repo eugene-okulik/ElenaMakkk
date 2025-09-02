@@ -50,4 +50,5 @@ def update_dates():
                 delta_days = (now_date - date).days
                 print(f'3. Дней назад: {delta_days}\n')
 
+
 update_dates()
