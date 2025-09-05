@@ -8,20 +8,18 @@ where name = 'Elena'
 AND second_name = 'Makouskaya'
 
 -- 2. Создайте несколько книг (books) и укажите, что ваш созданный студент взял их
-INSERT INTO books  (title)
-VALUES
-('the best python tutorial'),
-('the mid python tutorial'),
-('the worst python tutorial')
+INSERT INTO books  (title, taken_by_student_id)
+VALUES ('the best python tutorial', 21130)
+
+INSERT INTO books  (title, taken_by_student_id)
+VALUES ('the mid python tutorial', 21130)
+
+INSERT INTO books  (title, taken_by_student_id)
+VALUES ('the worst python tutorial', 21130)
 
 SELECT * from books b
-where title = 'the best python tutorial'
-OR title = 'the mid python tutorial'
-OR title = 'the worst python tutorial'
+where taken_by_student_id = 21130
 
-UPDATE books b
-SET taken_by_student_id = 21130
-WHERE id = 2505 OR id = 2506 OR id = 2507
 
 -- 3. Создайте группу (group) и определите своего студента туда
 INSERT INTO `groups`  (title, end_date, start_date)
