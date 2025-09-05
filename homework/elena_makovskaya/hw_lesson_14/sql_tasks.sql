@@ -1,7 +1,7 @@
 
 -- 1. Создайте студента (student)
 INSERT INTO students (name, second_name, group_id)
-VALUES ('Elena', 'Makouskaya', 1)
+VALUES ('Elena', 'Makouskaya')
 
 SELECT * from students
 where name = 'Elena'
@@ -76,3 +76,27 @@ VALUES
 
 SELECT * from marks m
 where m.student_id = 21130
+
+
+
+-- Получите информацию из базы данных:
+-- Все оценки студента
+-- Все книги, которые находятся у студента
+-- Для вашего студента выведите всё, что о нем есть в базе: группа, книги, оценки с названиями занятий и предметов
+-- (всё одним запросом с использованием Join)
+
+SELECT m.value FROM marks m
+where m.student_id = 21130
+
+SELECT b.title from books b
+where b.taken_by_student_id = 21130
+
+
+SELECT st.name, st.second_name, g.title, b.title, m.value, s.title, l.title
+from students st
+JOIN `groups` g ON st.group_id = g.id
+JOIN books b  ON st.id = b.taken_by_student_id
+JOIN marks m  ON m.student_id = st.id
+JOIN lessons l ON l.id = m.lesson_id
+JOIN subjects s ON s.id = l.subject_id
+where st.id = 21130
