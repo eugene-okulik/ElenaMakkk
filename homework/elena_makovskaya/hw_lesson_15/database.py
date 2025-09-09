@@ -59,14 +59,14 @@ print('4. Создайте несколько учебных предметов 
 # print(' ')
 
 
-subjects = ["subject1", "subject2", "subject3"]
+query = "INSERT INTO subjects (title) VALUES (%s)"
+subjects_list = ['subject1', 'subject2', 'subject3']
 subject_ids = []
-for subject in subjects:
-    cursor.execute("INSERT INTO subjects (title) VALUES (%s)", (subject,))
-    subject_id = subject_ids.append(cursor.lastrowid)
-    cursor.execute("SELECT * FROM subjects WHERE id = %s", (subject_id,))
+for subject in subjects_list:
+    cursor.execute(query, (subject,))
+    subject_ids.append(cursor.lastrowid)
+    cursor.execute("SELECT * FROM subjects WHERE id = %s", (cursor.lastrowid,))
     print(cursor.fetchone())
-
 print(' ')
 
 print('5. Создайте по два занятия для каждого предмета (lessons)')
@@ -139,5 +139,5 @@ cursor.execute(f"SELECT st.name, st.second_name, g.title, b.title, m.value, s.ti
                f"where st.id = {student_id}")
 print(cursor.fetchall())
 
-db.commit()
+# db.commit()
 db.close()
