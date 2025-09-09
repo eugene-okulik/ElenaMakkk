@@ -42,49 +42,60 @@ print(cursor.fetchall())
 print(' ')
 
 print('4. Создайте несколько учебных предметов (subjects)')
-cursor.execute("INSERT INTO subjects (title) VALUES ('subject1')")
-subject_id1 = cursor.lastrowid
-cursor.execute(f'SELECT * from subjects where id = {subject_id1}')
-print(cursor.fetchall())
+# cursor.execute("INSERT INTO subjects (title) VALUES ('subject1')")
+# subject_id1 = cursor.lastrowid
+# cursor.execute(f'SELECT * from subjects where id = {subject_id1}')
+# print(cursor.fetchall())
+#
+# cursor.execute("INSERT INTO subjects (title) VALUES ('subject2')")
+# subject_id2 = cursor.lastrowid
+# cursor.execute(f'SELECT * from subjects where id = {subject_id2}')
+# print(cursor.fetchall())
+#
+# cursor.execute("INSERT INTO subjects (title) VALUES ('subject3')")
+# subject_id3 = cursor.lastrowid
+# cursor.execute(f'SELECT * from subjects where id = {subject_id3}')
+# print(cursor.fetchall())
+# print(' ')
 
-cursor.execute("INSERT INTO subjects (title) VALUES ('subject2')")
-subject_id2 = cursor.lastrowid
-cursor.execute(f'SELECT * from subjects where id = {subject_id2}')
-print(cursor.fetchall())
 
-cursor.execute("INSERT INTO subjects (title) VALUES ('subject3')")
-subject_id3 = cursor.lastrowid
-cursor.execute(f'SELECT * from subjects where id = {subject_id3}')
-print(cursor.fetchall())
+subjects = ["subject1", "subject2", "subject3"]
+subject_ids = []
+for subject in subjects:
+    cursor.execute("INSERT INTO subjects (title) VALUES (%s)", (subject,))
+    subject_id = subject_ids.append(cursor.lastrowid)
+    cursor.execute("SELECT * FROM subjects WHERE id = %s", (subject_id,))
+    print(cursor.fetchone())
+
 print(' ')
 
 print('5. Создайте по два занятия для каждого предмета (lessons)')
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_id1})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_ids[0]})")
 lesson_1 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_1}')
 print(cursor.fetchall())
 
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_id1})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_ids[0]})")
 lesson_2 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_2}')
 print(cursor.fetchall())
 
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_id2})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_ids[1]})")
 lesson_3 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_3}')
 print(cursor.fetchall())
 
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_id2})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_ids[1]})")
 lesson_4 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_4}')
 print(cursor.fetchall())
 
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_id3})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson1', {subject_ids[2]})")
 lesson_5 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_5}')
 print(cursor.fetchall())
 
-cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_id3})")
+cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('lesson2', {subject_ids[2]})")
 lesson_6 = cursor.lastrowid
 cursor.execute(f'SELECT * from lessons where id = {lesson_6}')
 print(cursor.fetchall())
