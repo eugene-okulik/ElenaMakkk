@@ -45,13 +45,13 @@ with open(eugene_file_path, newline='', encoding='utf-8') as csvfile:
         mark_value = row['mark_value']
 
         query = """
-            SELECT * FROM students st 
-            JOIN `groups` g ON st.group_id = g.id 
-            JOIN books b ON st.id = b.taken_by_student_id 
-            JOIN marks m ON m.student_id = st.id 
-            JOIN lessons l ON l.id = m.lesson_id 
+            SELECT * FROM students st
+            JOIN `groups` g ON st.group_id = g.id
+            JOIN books b ON st.id = b.taken_by_student_id
+            JOIN marks m ON m.student_id = st.id
+            JOIN lessons l ON l.id = m.lesson_id
             JOIN subjects s ON s.id = l.subject_id
-            WHERE st.name = %s AND st.second_name = %s 
+            WHERE st.name = %s AND st.second_name = %s
             AND g.title = %s AND b.title = %s
             AND s.title = %s AND l.title = %s
             AND m.value = %s
