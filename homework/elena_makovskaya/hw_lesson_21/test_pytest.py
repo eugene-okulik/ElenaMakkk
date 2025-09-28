@@ -60,7 +60,7 @@ def test_put_object(new_object_id, start_end_test):
         response = requests.put(f'{url}/{new_object_id}', json=body)
     with allure.step('Проверка статус код = 200'):
         assert response.status_code == 200, 'Неверный статус код'
-    with allure.step(f'Проверка что name в ответе соответствует Elena2'):
+    with allure.step('Проверка что name в ответе соответствует Elena2'):
         assert response.json()['name'] == 'Elena2', 'В ответе вернулся неверный параметр name'
 
 
@@ -75,7 +75,7 @@ def test_patch_object(new_object_id, start_end_test):
         response = requests.patch(f'{url}/{new_object_id}', json=body)
     with allure.step('Проверка статус код = 200'):
         assert response.status_code == 200, 'Неверный статус код'
-    with allure.step(f'Проверка что name в ответе соответствует Elena3'):
+    with allure.step('Проверка что name в ответе соответствует Elena3'):
         assert response.json()['name'] == 'Elena3', 'В ответе вернулся неверный параметр name'
 
 
