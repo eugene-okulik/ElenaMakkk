@@ -21,13 +21,16 @@ def put_object_endpoint():
 def get_objects_endpoint():
     return GetObjects()
 
+
 @pytest.fixture()
 def get_object_endpoint():
     return GetObject()
 
+
 @pytest.fixture()
 def patch_object_endpoint():
     return PatchObject()
+
 
 @pytest.fixture()
 def delete_object_endpoint():

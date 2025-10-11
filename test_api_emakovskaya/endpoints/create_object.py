@@ -13,4 +13,3 @@ class Create_object(Endpoint):
         )
         self.response_in_json = self.response.json()
         return self.response
-
