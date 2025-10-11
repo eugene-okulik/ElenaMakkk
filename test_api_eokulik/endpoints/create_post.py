@@ -1,7 +1,6 @@
 import requests
 import allure
 
-from test_api_eokuik.endpoints.endpoint import Endpoint
 
 
 class CreatePost(Endpoint):
