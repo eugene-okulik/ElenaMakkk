@@ -6,8 +6,8 @@ def test_get_objects(get_objects_endpoint):
     get_objects_endpoint.check_status_code_is_200()
 
 
-def test_get_object(get_object_endpoint):
-    get_object_endpoint.get_object(1)
+def test_get_object(get_object_endpoint, new_object_id):
+    get_object_endpoint.get_object(object_id=new_object_id)
     get_object_endpoint.check_status_code_is_200()
 
 
@@ -27,29 +27,29 @@ def test_post_object(create_object_endpoint, data):
     create_object_endpoint.check_response_name_is_correspond(data['name'])
 
 
-def test_put_object(put_object_endpoint):
+def test_put_object(put_object_endpoint, new_object_id):
     body = {
-        "name": "Elena2",
+        "name": "Elena123",
         "data": {
             "level": 2,
             "group": 2
         }
     }
-    put_object_endpoint.put_object(1, payload=body)
+    put_object_endpoint.put_object(new_object_id, payload=body)
     put_object_endpoint.check_status_code_is_200()
     put_object_endpoint.check_response_name_is_correspond(body['name'])
 
 
-def test_patch_object(patch_object_endpoint):
+def test_patch_object(patch_object_endpoint, new_object_id):
     body = {
         "name": "Elena3"
     }
-    object_id = 1
+    object_id = new_object_id
     patch_object_endpoint.patch_object(object_id=object_id, payload=body)
     patch_object_endpoint.check_response_name_is_correspond(body['name'])
     patch_object_endpoint.check_status_code_is_200()
 
 
-def test_delete_object(delete_object_endpoint):
-    delete_object_endpoint.delete_object(1)
-    delete_object_endpoint.check_status_code_is_403()
+def test_delete_object(delete_object_endpoint, new_object_id):
+    delete_object_endpoint.delete_object(new_object_id)
+    delete_object_endpoint.check_status_code_is_200()

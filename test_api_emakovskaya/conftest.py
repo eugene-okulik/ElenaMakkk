@@ -1,4 +1,5 @@
 import pytest
+import requests
 from test_api_emakovskaya.endpoints.create_object import Create_object
 from test_api_emakovskaya.endpoints.update_object import UpdateObject
 from test_api_emakovskaya.endpoints.get_objects import GetObjects
@@ -35,3 +36,19 @@ def patch_object_endpoint():
 @pytest.fixture()
 def delete_object_endpoint():
     return DeleteObject()
+
+
+@pytest.fixture()
+def new_object_id():
+    url = 'http://objapi.course.qa-practice.com/object'
+    body = {
+        "name": "Elena",
+        "data": {
+            "level": 1,
+            "group": 357
+        }
+    }
+    response = requests.post(url, json=body).json()
+    object_id = response['id']
+    yield object_id
+    requests.delete(f'{url}/{object_id}')
