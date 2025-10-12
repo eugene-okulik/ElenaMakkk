@@ -13,4 +13,3 @@ class Endpoint:
     @allure.step('check response status code is 200')
     def check_status_code_is_200(self):
         assert self.response.status_code == 200
-
