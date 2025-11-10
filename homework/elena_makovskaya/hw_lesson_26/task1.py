@@ -16,7 +16,6 @@
 # навести мышку на первый товар (на картинку товара)
 # нажать появившуюся кнопку корзины
 # в появившемся попапе проверить, что товар, на котором нажимали кнопку корзины, появился в этом попапе
-from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
