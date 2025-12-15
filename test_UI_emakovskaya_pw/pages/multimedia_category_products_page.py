@@ -13,7 +13,6 @@ class OfficeDesigne(BasePage):
         product_for_test = random.choice(products)
         product_for_test.click()
 
-        product_title_on_page = self.find(loc.product_title_on_page_loc)
         add_to_cart_btn = self.find(loc.add_to_cart_button)
         add_to_cart_btn.click()
         expect(self.find(loc.product_counter)).to_have_text('1')
