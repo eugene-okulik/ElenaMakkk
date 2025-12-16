@@ -18,7 +18,6 @@ class Section_Desc_Page(BasePage):
             content = element.text_content()
             assert text in content, f'Продукт "{content}" не содержит в названии текста "{text}"'
 
-
     def sort_items_by_name_and_verify(self):
         dropdown = self.find(loc.sort_dropdown)
         dropdown.click()

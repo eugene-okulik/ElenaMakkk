@@ -1,4 +1,4 @@
-search_field ='//*[@id="products_grid"]/div[1]/form/div/input'
+search_field = '//*[@id="products_grid"]/div[1]/form/div/input'
 result_products = '[class="text-primary text-decoration-none"]'
 result_count = '//*[@id="products_grid"]//*[@class="input-group "]//button//span//small'
 sort_dropdown = '[class="d-none d-lg-inline"]'
