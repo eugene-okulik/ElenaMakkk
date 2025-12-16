@@ -6,7 +6,7 @@ from test_UI_emakovskaya_pw.pages.locators import section_desc_locators as loc
 class Section_Desc_Page(BasePage):
     page_url = '/shop/category/desks-1'
 
-    def search_items(self, text):
+    def search_items_and_verify(self, text):
         search_field = self.find(loc.search_field)
         search_field.fill(text)
         search_field.press('Enter')
@@ -16,12 +16,10 @@ class Section_Desc_Page(BasePage):
 
         for element in products_locator.element_handles():
             content = element.text_content()
-            if content and text in content:
-                continue
-            else:
-                print(f'Продукт "{content}" не содержит в названии текста "{text}"')
+            assert text in content, f'Продукт "{content}" не содержит в названии текста "{text}"'
 
-    def sort_items_by_name(self):
+
+    def sort_items_by_name_and_verify(self):
         dropdown = self.find(loc.sort_dropdown)
         dropdown.click()
         sorting_by_name = self.find(loc.sort_by_name)
@@ -35,7 +33,7 @@ class Section_Desc_Page(BasePage):
         sorted_names = sorted(product_names)
         assert product_names == sorted_names
 
-    def filter_by_price(self, min_price, max_price):
+    def filter_by_price_and_verify(self, min_price, max_price):
         self.find(loc.field_min).first.click()
         min_price_set = self.find(loc.input_min).first
         min_price_set.click()

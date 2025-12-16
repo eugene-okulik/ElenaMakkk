@@ -37,10 +37,10 @@ class CartPage(BasePage):
         expected_price = round(one_product_price * quantity, 2)
         expect(self.find(loc.product_price)).to_have_text(f"{expected_price:.2f}")
 
-    def check_invalid_promo(self):
+    def check_invalid_promo(self, text):
         promo = 'test'
         input_promo = self.find(loc.discount_code)
         input_promo.click()
         input_promo.fill(promo)
         input_promo.press('Enter')
-        expect(self.find(loc.error_message)).to_have_text('This promo code is not available.')
+        expect(self.find(loc.error_message)).to_have_text(text)

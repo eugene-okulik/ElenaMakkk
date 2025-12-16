@@ -11,7 +11,8 @@ def test_check_total_price_if_product_qnty_changed(cart_page, office_designe):
 
 
 def test_check_invalid_promo(cart_page, office_designe):
+    text = 'This promo code is not available.'
     office_designe.open_page()
     office_designe.add_product_to_cart()
     cart_page.open_page()
-    cart_page.check_invalid_promo()
+    cart_page.check_invalid_promo(text)

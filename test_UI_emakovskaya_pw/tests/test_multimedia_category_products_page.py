@@ -11,4 +11,4 @@ def test_change_price_currency(office_designe):
 def test_terms_and_condition_open(office_designe):
     text = 'STANDARD TERMS AND CONDITIONS OF SALE'
     office_designe.open_page()
-    office_designe.open_terms_and_conditions(text)
+    office_designe.open_terms_and_conditions_and_verify(text)
