@@ -1,0 +1,7 @@
+empty_message = '[class="js_cart_lines alert alert-info"]'
+input_counter = '[class="js_quantity quantity form-control border-start-0 border-end-0"]'
+product_price = '[data-oe-type="monetary"] > :first-child'
+quantity_input = '[class="js_quantity quantity form-control border-start-0 border-end-0"]'
+product_counter = '//*[@id="o_main_nav"]//*[@href="/shop/cart"]//div//sup'
+discount_code = '[placeholder="Discount code..."]'
+error_message = '[class="alert alert-danger text-start"]'
